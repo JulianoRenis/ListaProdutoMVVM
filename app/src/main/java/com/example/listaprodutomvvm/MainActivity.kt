@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
                 binding.edtTextInserir.error = "Preencha um valor"
                 return@setOnClickListener
             }
-            val item = ItemModel(name = binding.edtTextInserir.text.toString())
+            val item = ItemModel(name = binding.edtTextInserir.text.toString(), onRemove = {itemAdapter.removeItem(it)})
             itemAdapter.addItem(item)
             binding.edtTextInserir.text!!.clear()
         }

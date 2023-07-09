@@ -14,6 +14,10 @@ class ItemAdapter (val context: Context,private val items: MutableList<ItemModel
     class ItemViewHolder(val binding : ItemProdutoBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: ItemModel){
           binding.txtItemAdapter.text = item.name
+
+            binding.imageView.setOnClickListener {
+                item.onRemove(item)
+            }
         }
     }
 
@@ -31,6 +35,11 @@ class ItemAdapter (val context: Context,private val items: MutableList<ItemModel
 
     fun addItem(newItem: ItemModel) {
         items.add(newItem)
+        notifyDataSetChanged()
+    }
+
+    fun removeItem(item: ItemModel) {
+        items.remove(item)
         notifyDataSetChanged()
     }
 }
