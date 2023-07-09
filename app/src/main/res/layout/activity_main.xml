@@ -34,6 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idRv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
